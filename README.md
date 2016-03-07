@@ -17,3 +17,8 @@ configure the ~/.composer/auth.json
 docker-compose up setup
 docker-compose up -d app
 ```
+
+Then visit: 
+```
+http://fwc.docker:8000/
+```
