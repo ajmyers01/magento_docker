@@ -1,6 +1,6 @@
 app:
   ports:
-    - "8000:80"
+    - "80:80"
   image: mageinferno/magento2-nginx:1.9
   links:
     - php-fpm

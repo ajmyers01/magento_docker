@@ -1,0 +1,1 @@
+/src/lib/web/mage/translate-inline.js
