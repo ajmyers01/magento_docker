@@ -2,15 +2,15 @@
 return array (
   'backend' => 
   array (
-    'frontName' => 'admin_4ztm1z',
+    'frontName' => 'admin_1sa84k',
   ),
   'install' => 
   array (
-    'date' => 'Sun, 06 Mar 2016 20:41:46 +0000',
+    'date' => 'Wed, 09 Mar 2016 13:42:36 +0000',
   ),
   'crypt' => 
   array (
-    'key' => 'e3691f363404ddbae7384f007d689509',
+    'key' => '578dedc231d832de059d2024c0fc2584',
   ),
   'session' => 
   array (

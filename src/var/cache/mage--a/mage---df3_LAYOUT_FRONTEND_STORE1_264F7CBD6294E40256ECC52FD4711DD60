@@ -1,4 +1,4 @@
-a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"tags";s:123:"df3_DEFAULT,df3_CMS_NOROUTE_INDEX,df3_CMS_PAGE_VIEW,df3_CMS_NOROUTE_INDEX_ID_NO_ROUTE,df3_LAYOUT_GENERAL_CACHE_TAG,df3_MAGE";}
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457532159;s:6:"expire";i:9999999999;s:4:"tags";s:123:"df3_DEFAULT,df3_CMS_NOROUTE_INDEX,df3_CMS_PAGE_VIEW,df3_CMS_NOROUTE_INDEX_ID_NO_ROUTE,df3_LAYOUT_GENERAL_CACHE_TAG,df3_MAGE";}
 <body>
    <referenceContainer name="header.panel">
       <block class="Magento\Directory\Block\Currency" name="currency" before="store_language" template="currency.phtml"/>
@@ -157,6 +157,14 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
    </referenceBlock>
 </body>
 <body>
+   <block class="Magento\Framework\Pricing\Render" name="product.price.render.default">
+      <arguments>
+         <argument name="price_render_handle" xsi:type="string">catalog_product_prices</argument>
+         <argument name="use_link_for_as_low_as" xsi:type="boolean">true</argument>
+      </arguments>
+   </block>
+</body>
+<body>
    <referenceBlock name="top.links">
       <block class="Magento\Framework\View\Element\Template" name="catalog.compare.link" before="-" template="Magento_Catalog::product/compare/link.phtml">
          <arguments>
@@ -189,14 +197,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
    <block class="Magento\Framework\View\Element\Template" name="head.additional" as="head.additional" template="Magento_Theme::html/container.phtml"/>
 </body>
 <body>
-   <block class="Magento\Framework\Pricing\Render" name="product.price.render.default">
-      <arguments>
-         <argument name="price_render_handle" xsi:type="string">catalog_product_prices</argument>
-         <argument name="use_link_for_as_low_as" xsi:type="boolean">true</argument>
-      </arguments>
-   </block>
-</body>
-<body>
    <referenceContainer name="header-wrapper">
       <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch" template="Magento_Search::form.mini.phtml"/>
    </referenceContainer>
@@ -207,11 +207,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
             <argument name="path" xsi:type="string">search/term/popular</argument>
          </arguments>
       </block>
-   </referenceBlock>
-</body>
-<body>
-   <referenceBlock name="head.components">
-      <block class="Magento\Framework\View\Element\Js\Components" name="bundle_checkout_page_head_components" template="Magento_Bundle::js/components.phtml"/>
    </referenceBlock>
 </body>
 <body/>
@@ -231,19 +226,8 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
    </referenceContainer>
 </body>
 <body>
-   <referenceBlock name="top.search">
-      <block class="Magento\Framework\View\Element\Template" name="advanced-search-link" template="Magento_CatalogSearch::advanced/link.phtml"/>
-   </referenceBlock>
-   <referenceBlock name="footer_links">
-      <block class="Magento\Framework\View\Element\Html\Link\Current" name="catalog-search-advanced-link">
-         <arguments>
-            <argument name="label" translate="true" xsi:type="string">Advanced Search</argument>
-            <argument name="path" xsi:type="string">catalogsearch/advanced</argument>
-            <argument name="attributes" xsi:type="array">
-               <item name="data-action" xsi:type="string">advanced-search</item>
-            </argument>
-         </arguments>
-      </block>
+   <referenceBlock name="head.components">
+      <block class="Magento\Framework\View\Element\Js\Components" name="bundle_checkout_page_head_components" template="Magento_Bundle::js/components.phtml"/>
    </referenceBlock>
 </body>
 <body>
@@ -261,6 +245,11 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
          </arguments>
       </block>
    </referenceBlock>
+</body>
+<body>
+   <referenceContainer name="after.body.start">
+      <block class="Magento\GoogleAnalytics\Block\Ga" name="google_analytics" as="google_analytics" template="ga.phtml"/>
+   </referenceContainer>
 </body>
 <body>
    <referenceBlock name="minicart">
@@ -468,11 +457,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
    </referenceContainer>
 </body>
 <body>
-   <referenceContainer name="after.body.start">
-      <block class="Magento\GoogleAnalytics\Block\Ga" name="google_analytics" as="google_analytics" template="ga.phtml"/>
-   </referenceContainer>
-</body>
-<body>
    <referenceBlock name="head.components">
       <block class="Magento\Framework\View\Element\Js\Components" name="newsletter_head_components" template="Magento_Newsletter::js/components.phtml"/>
    </referenceBlock>
@@ -508,7 +492,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
       </arguments>
    </referenceBlock>
 </body>
-<body/>
 <body>
    <referenceBlock name="head.components">
       <block class="Magento\Framework\View\Element\Js\Components" name="reports_page_head_components" template="Magento_Reports::js/components.phtml"/>
@@ -526,10 +509,27 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
    <block class="Magento\Rss\Block\Feeds" name="head_rss" ifconfig="rss/config/active"/>
 </body>
 <body>
+   <referenceBlock name="top.search">
+      <block class="Magento\Framework\View\Element\Template" name="advanced-search-link" template="Magento_CatalogSearch::advanced/link.phtml"/>
+   </referenceBlock>
+   <referenceBlock name="footer_links">
+      <block class="Magento\Framework\View\Element\Html\Link\Current" name="catalog-search-advanced-link">
+         <arguments>
+            <argument name="label" translate="true" xsi:type="string">Advanced Search</argument>
+            <argument name="path" xsi:type="string">catalogsearch/advanced</argument>
+            <argument name="attributes" xsi:type="array">
+               <item name="data-action" xsi:type="string">advanced-search</item>
+            </argument>
+         </arguments>
+      </block>
+   </referenceBlock>
+</body>
+<body>
    <referenceContainer name="after.body.start">
       <block class="Magento\Ui\Block\Logger" name="logger" template="Magento_Ui::logger.phtml"/>
    </referenceContainer>
 </body>
+<body/>
 <body>
    <referenceBlock name="head.components">
       <block class="Magento\Framework\View\Element\Js\Components" name="wishlist_page_head_components" template="Magento_Wishlist::js/components.phtml"/>
@@ -634,16 +634,6 @@ a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1457298569;s:6:"expire";i:9999999999;s:4:"t
             </arguments>
          </block>
       </container>
-   </referenceContainer>
-</body>
-<body>
-   <referenceContainer name="cms_footer_links_container">
-      <block class="Magento\Cms\Block\Widget\Block" name="6b7460cb9bac11aa4e729467832742b3" template="widget/static_block/default.phtml">
-         <action method="setData">
-            <argument name="name" xsi:type="string">block_id</argument>
-            <argument name="value" xsi:type="string">1</argument>
-         </action>
-      </block>
    </referenceContainer>
 </body>
 <body>
