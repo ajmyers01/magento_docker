@@ -20,5 +20,5 @@ docker-compose up -d app
 
 Then visit: 
 ```
-http://fwc.docker:8000/
+http://fwc.docker
 ```
